@@ -1,0 +1,243 @@
+.app {
+  min-height: 100vh;
+  background: #0f0f0f;
+  color: #f5f5f5;
+  padding: 24px 16px 40px;
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.header h1 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 2.2rem;
+}
+
+.header p {
+  margin: 8px 0 0;
+  color: #a3a3a3;
+  font-size: 1rem;
+}
+
+.card {
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  border-radius: 14px;
+  padding: 18px;
+}
+
+.record-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.record-btn {
+  width: 180px;
+  height: 180px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  background: #262626;
+  color: #fafafa;
+  font-size: 1.1rem;
+  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.record-btn:hover:enabled {
+  transform: scale(1.02);
+  background: #303030;
+}
+
+.record-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.record-btn.recording {
+  background: #7f1d1d;
+  animation: pulse 1.2s infinite;
+}
+
+.record-dot {
+  width: 16px;
+  height: 16px;
+  background: #ef4444;
+  border-radius: 999px;
+}
+
+.timer {
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.stop-btn {
+  border: none;
+  border-radius: 10px;
+  background: #ef4444;
+  color: #fff;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.stop-btn:hover {
+  background: #dc2626;
+}
+
+.analyzing {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #d4d4d4;
+}
+
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 3px solid #3f3f46;
+  border-top-color: #fafafa;
+  border-radius: 999px;
+  animation: spin 0.8s linear infinite;
+}
+
+.error {
+  color: #fda4af;
+  margin: 0;
+}
+
+.result-card h2,
+.history-card h2 {
+  margin-top: 0;
+}
+
+.result-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.status {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.progress-wrap {
+  margin: 16px 0;
+}
+
+.progress-label {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  color: #d4d4d4;
+}
+
+.progress-track {
+  width: 100%;
+  height: 12px;
+  border-radius: 999px;
+  background: #2d2d2d;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  border-radius: inherit;
+}
+
+.spectrogram h3 {
+  margin: 0 0 10px;
+  font-size: 1rem;
+  color: #e5e5e5;
+}
+
+.spectrogram canvas {
+  width: 100%;
+  max-width: 100%;
+  border: 1px solid #333;
+  border-radius: 8px;
+  background: #081f2f;
+}
+
+.table-wrap {
+  width: 100%;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 560px;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 10px 8px;
+  border-bottom: 1px solid #2d2d2d;
+  font-size: 0.95rem;
+}
+
+th {
+  color: #d4d4d4;
+  font-weight: 600;
+}
+
+td {
+  color: #f5f5f5;
+}
+
+.empty {
+  text-align: center;
+  color: #a3a3a3;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.35);
+  }
+  50% {
+    box-shadow: 0 0 0 16px rgba(239, 68, 68, 0);
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 640px) {
+  .app {
+    padding: 18px 12px 28px;
+  }
+
+  .header h1 {
+    font-size: 1.9rem;
+  }
+
+  .record-btn {
+    width: 150px;
+    height: 150px;
+    font-size: 1rem;
+  }
+}
